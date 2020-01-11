@@ -1,16 +1,13 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-//using OpenQA.Selenium.Firefox;
-//using System.Threading;
-using System;
 
 namespace DesafioWooza
 {
     [TestFixture]
-    public class Tests
+    public class WebDriver
     {
-        private IWebDriver driver;
+        public static IWebDriver driver { get; set; }
 
 
         [SetUp]
@@ -18,17 +15,8 @@ namespace DesafioWooza
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-        }
-
-
-        [Test]
-        public void Test1()
-        {
-            PaginaPrincipal principal = new PaginaPrincipal(driver);
-
-            principal.goPaginaPrincipal();
-            principal.goMenuPlanosDeCelular_TIM();
-
+            driver.Navigate().GoToUrl("https://www.celulardireto.com.br");
+            
         }
 
 
