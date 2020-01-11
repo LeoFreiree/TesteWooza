@@ -9,7 +9,6 @@ namespace DesafioWooza
     {
 
         [Test]
-
         public void acessarPlanoTimviaMenueClicaremContratar()
         {
             
@@ -19,8 +18,12 @@ namespace DesafioWooza
 
             principal.goMenuPlanosDeCelular();
             principal.menuPlanosDeCelular_btnTim.Click();
-            planoceltim.btnContratar.Click();
             Console.WriteLine("Menu Planos da Tim acessado com sucesso");
+            Thread.Sleep(4000);
+            planoceltim.validarPlanoControle3GB();
+            Console.WriteLine("Método 'validarPlanoControle3GB' foi executado com sucesso.");
+            planoceltim.btnContratar.Click();
+            Console.WriteLine("btn contratar selecionado com sucesso");
             Thread.Sleep(4000);
         }
 
