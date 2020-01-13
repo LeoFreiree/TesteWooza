@@ -1,5 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using System;
+using System.Text.RegularExpressions;
 
 namespace DesafioWooza
 {
@@ -7,19 +10,21 @@ namespace DesafioWooza
     {
         //Mapeamento da página "https://www.celulardireto.com.br" obtida atraves do "WebDriver"
 
-        public IWebElement menuPlanosDeCelular => driver.FindElement(By.XPath("(//a[contains(text(),'Planos de celular')])[2]"));
-        public IWebElement menuPlanosDeCelular_btnTim => driver.FindElement(By.XPath("(//a[contains(text(),'TIM')])[3]"));
+        public IWebElement cxPesquisa => driver.FindElement(By.Name("phrase"));
+        public IWebElement btnPesquisar => driver.FindElement(By.CssSelector("svg"));
+        public IWebElement msgPesquisa => driver.FindElement(By.CssSelector("strong"));
+        public IWebElement menuOperadoras => driver.FindElement(By.XPath("(//a[contains(text(),'Operadoras')])[2]"));
+        public IWebElement menuOperadoras_btnTim => driver.FindElement(By.XPath("(//a[contains(text(),'TIM')])[4]"));
 
         //Métodos da página 
 
-        public void goMenuPlanosDeCelular()
+        public void goMenuOperadoras()
         {
             Actions action = new Actions(driver);
-            action.MoveToElement(menuPlanosDeCelular).Perform();
+            action.MoveToElement(menuOperadoras_btnTim).Perform();
 
         }
 
     }
-
 }
 
