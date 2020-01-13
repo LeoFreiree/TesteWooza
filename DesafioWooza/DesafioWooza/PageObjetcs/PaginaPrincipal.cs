@@ -1,8 +1,6 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Text.RegularExpressions;
+
 
 namespace DesafioWooza
 {
