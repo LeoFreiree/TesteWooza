@@ -10,7 +10,7 @@ namespace DesafioWooza
         public void ValidarCaixaDePesquisa()
         {
             PaginaPrincipal principal = new PaginaPrincipal();
-
+            
             principal.cxPesquisa.Click();
             principal.cxPesquisa.SendKeys("TIM");
             principal.btnPesquisar.Click();

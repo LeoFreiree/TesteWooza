@@ -14,6 +14,7 @@ namespace DesafioWooza
 
         public void validarPaginaTim(string titulo)
         {
+            
             try
             {
                 Assert.AreEqual(titulo, titulopagina);
