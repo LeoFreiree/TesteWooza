@@ -6,15 +6,15 @@ namespace DesafioWooza
 {
     class TimTests : WebDriver
     {
+        private const string _valoresperado = "TIM";
+
         [Test]
         public void ValidarCaixaDePesquisa()
-        {
-            //PaginaPrincipal principal = new PaginaPrincipal();
-            
+        {                        
             PaginaPrincipal.cxPesquisa.Click();
-            PaginaPrincipal.cxPesquisa.SendKeys("TIM");
+            PaginaPrincipal.cxPesquisa.SendKeys(_valoresperado);
             PaginaPrincipal.btnPesquisar.Click();
-            Assert.AreEqual("TIM", PaginaPrincipal.msgPesquisa.Text);
+            Assert.AreEqual(_valoresperado, PaginaPrincipal.msgPesquisa.Text);
             Console.WriteLine("Caso 'validarCaixaDePesquisa' Finalizado com sucesso");
 
         }
@@ -22,12 +22,11 @@ namespace DesafioWooza
         [Test]
         public void ValidarPaginaTim()
         {
-            String valoresperado = "TIM";
             Operadoras_Tim paginatim = new Operadoras_Tim();
             
-            PaginaPrincipal.goMenuOperadoras();
+            PaginaPrincipal.GoMenuOperadoras();
             PaginaPrincipal.menuOperadoras_btnTim.Click();
-            paginatim.validarPaginaTim(titulo: valoresperado);
+            paginatim.ValidarPaginaTim(titulo: _valoresperado);
             Console.WriteLine("Caso 'validarPaginaTim' Finalizado com sucesso.");
         }        
 

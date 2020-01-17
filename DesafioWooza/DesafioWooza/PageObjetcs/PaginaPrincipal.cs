@@ -16,7 +16,7 @@ namespace DesafioWooza
 
         //Métodos da página 
 
-        public static void goMenuOperadoras()
+        public static void GoMenuOperadoras()
         {
             Actions action = new Actions(driver);
             action.MoveToElement(menuOperadoras_btnTim).Perform();

@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace DesafioWooza
 {
@@ -12,7 +13,7 @@ namespace DesafioWooza
 
         //Métodos da página
 
-        public void validarPaginaTim(string titulo)
+        public void ValidarPaginaTim(string titulo)
         {
             
             try
