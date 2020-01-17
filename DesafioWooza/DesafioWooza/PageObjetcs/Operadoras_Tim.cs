@@ -1,7 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using OpenQA.Selenium.Support.PageObjects;
+
+
 
 namespace DesafioWooza
 {
@@ -27,7 +28,7 @@ namespace DesafioWooza
                 throw;
             }            
             
-        }
+        }             
 
     }
 

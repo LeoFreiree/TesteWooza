@@ -14,9 +14,8 @@ namespace DesafioWooza
             PaginaPrincipal.cxPesquisa.Click();
             PaginaPrincipal.cxPesquisa.SendKeys(_valoresperado);
             PaginaPrincipal.btnPesquisar.Click();
-            Assert.AreEqual(_valoresperado, PaginaPrincipal.msgPesquisa.Text);
+            Assert.AreEqual(PaginaPrincipal.RetirarNumerosResultadoPesquisa(), "Encontramos  resultados para: " + _valoresperado); //Realizando a validação da mensagem sem o numero de resultados
             Console.WriteLine("Caso 'validarCaixaDePesquisa' Finalizado com sucesso");
-
         }
 
         [Test]
