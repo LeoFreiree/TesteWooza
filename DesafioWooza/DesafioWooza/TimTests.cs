@@ -24,7 +24,7 @@ namespace DesafioWooza
         {
             String valoresperado = "TIM";
             Operadoras_Tim paginatim = new Operadoras_Tim();
-
+            
             PaginaPrincipal.goMenuOperadoras();
             PaginaPrincipal.menuOperadoras_btnTim.Click();
             paginatim.validarPaginaTim(titulo: valoresperado);
