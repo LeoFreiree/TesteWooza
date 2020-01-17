@@ -9,12 +9,12 @@ namespace DesafioWooza
         [Test]
         public void ValidarCaixaDePesquisa()
         {
-            PaginaPrincipal principal = new PaginaPrincipal();
+            //PaginaPrincipal principal = new PaginaPrincipal();
             
-            principal.cxPesquisa.Click();
-            principal.cxPesquisa.SendKeys("TIM");
-            principal.btnPesquisar.Click();
-            Assert.AreEqual("TIM", principal.msgPesquisa.Text);
+            PaginaPrincipal.cxPesquisa.Click();
+            PaginaPrincipal.cxPesquisa.SendKeys("TIM");
+            PaginaPrincipal.btnPesquisar.Click();
+            Assert.AreEqual("TIM", PaginaPrincipal.msgPesquisa.Text);
             Console.WriteLine("Caso 'validarCaixaDePesquisa' Finalizado com sucesso");
 
         }
@@ -23,11 +23,10 @@ namespace DesafioWooza
         public void ValidarPaginaTim()
         {
             String valoresperado = "TIM";
-            PaginaPrincipal principal = new PaginaPrincipal();
             Operadoras_Tim paginatim = new Operadoras_Tim();
 
-            principal.goMenuOperadoras();
-            principal.menuOperadoras_btnTim.Click();
+            PaginaPrincipal.goMenuOperadoras();
+            PaginaPrincipal.menuOperadoras_btnTim.Click();
             paginatim.validarPaginaTim(titulo: valoresperado);
             Console.WriteLine("Caso 'validarPaginaTim' Finalizado com sucesso.");
         }        

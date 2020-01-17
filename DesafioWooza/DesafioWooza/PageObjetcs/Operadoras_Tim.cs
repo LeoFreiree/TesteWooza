@@ -8,7 +8,7 @@ namespace DesafioWooza
     {
         //Mapeamento da página "https://www.celulardireto.com.br/tim/" obtida através do menu "Operadoras" da "PaginaPrincipal"
 
-        private string titulopagina => driver.FindElement(By.CssSelector("h1")).Text;       
+        private string _titulopagina => driver.FindElement(By.CssSelector("h1")).Text;       
 
         //Métodos da página
 
@@ -17,7 +17,7 @@ namespace DesafioWooza
             
             try
             {
-                Assert.AreEqual(titulo, titulopagina);
+                Assert.AreEqual(titulo, _titulopagina);
             }
             catch (Exception)
             {
