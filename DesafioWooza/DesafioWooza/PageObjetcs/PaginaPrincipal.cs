@@ -13,7 +13,7 @@ namespace DesafioWooza
         public static IWebElement cxPesquisa => driver.FindElement(By.Name("phrase"));
         public static IWebElement btnPesquisar => driver.FindElement(By.CssSelector("svg"));
         public static IWebElement msgPesquisa_Completa => driver.FindElement(By.CssSelector("h2"));
-        public static IWebElement msgPesquisa_Final => driver.FindElement(By.CssSelector("strong")); 
+        public static IWebElement msgPesquisa_Final => driver.FindElement(By.CssSelector("strong"));
         public static IWebElement menuOperadoras => driver.FindElement(By.XPath("(//a[contains(text(),'Operadoras')])[2]"));
         public static IWebElement menuOperadoras_btnTim => driver.FindElement(By.XPath("(//a[contains(text(),'TIM')])[4]"));
 
@@ -25,11 +25,15 @@ namespace DesafioWooza
             action.MoveToElement(menuOperadoras_btnTim).Perform();
 
         }
-                
-        public static string RetirarNumerosResultadoPesquisa()
+
+        private static string RetirarNumerosResultadoPesquisa()
         {
-            return Regex.Replace(msgPesquisa_Completa.Text, @"[\d-]", string.Empty); // Retira todos os numeros do texto           
-            
+            return Regex.Replace(msgPesquisa_Completa.Text, @"[\d-]", string.Empty); // Retira todos os numeros do texto            
+        }
+
+        public static void ValidarResultadoPesquisa(string valoresperado)
+        {
+            Assert.AreEqual(RetirarNumerosResultadoPesquisa(), "Encontramos  resultados para: " + valoresperado);
         }
     }
 }
